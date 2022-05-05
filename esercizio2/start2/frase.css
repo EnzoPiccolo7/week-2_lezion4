@@ -7,4 +7,37 @@
 6 animare le altre 2 parole
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
+#testoAlternato {
+    border: 1px solid black;
+    margin: 2rem;
+    padding: 1rem;
+}
+.parole {
+    animation-name: slidein;
+    display: inline-block;
+    transform: translateX(20px);
+}
+.web {
+    transition-delay: 3s;
+}
+.page {
+    transition-delay: 6s;
+}
+.app {
+    transition-delay: 9s;
+}
 
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+}
