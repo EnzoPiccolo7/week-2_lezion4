@@ -7,37 +7,44 @@
 6 animare le altre 2 parole
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
+html {
+    font-size: 1.3rem;
+}
+main {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
 #testoAlternato {
-    border: 1px solid black;
-    margin: 2rem;
-    padding: 1rem;
-}
-.parole {
-    animation-name: slidein;
-    display: inline-block;
-    transform: translateX(20px);
-}
-.web {
-    transition-delay: 3s;
-}
-.page {
-    transition-delay: 6s;
-}
-.app {
-    transition-delay: 9s;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #363636;
+    padding: 1em;
 }
 
-@keyframes slidein {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
+@keyframes txtAlternate  {
+    0% {opacity:0 ; }
+    5% {opacity: 0; transform: translateY(-30px)}
+    15% {opacity:1 ; transform: translateY(0px)}
+    20% {opacity:1 ; transform: translateY(0px)}
+    30% {opacity: 0; transform: translateY(30px)}
+    100% {opacity: 0; }
+    
+}
+.parole {
+    /* margin-left: 10px; */
+    text-indent: 10px;
+}
+.parole i {
+    color: #9b9b9b;
+    opacity: 0;
+    animation: txtAlternate 7s linear infinite 0s ;
+}
+parole i:nth-child(2)
+    {
+        animation-delay: 2s;
     }
-    50% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(25px);
-    }
+.parole i:nth-child(3)
+{
+    animation-delay: 4s;
 }
